@@ -1,4 +1,4 @@
-package gui;
+package view;
 
 import java.net.URL;
 import javafx.application.Application;
@@ -21,9 +21,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(url);
 
         //---------------------------------------------
-        // gui.Controller ist für Funktionlität zuständig
+        // gui.PassiveView ist für Funktionlität zuständig
         //---------------------------------------------
-        loader.setController(new Controller());
+        loader.setController(new PassiveView());
 
         //---------------------------------------------
         // Layout laden und in Fenster setzen

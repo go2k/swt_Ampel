@@ -1,15 +1,16 @@
-package gui;
+package view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import domain.Ampellogik;
+import model.Model;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import presenter.Presenter;
 
-class Controller implements Initializable {
+public class PassiveView implements Initializable {
 
     //---------------------------------------------
     // Membervariablen für Steuerelemente
@@ -26,6 +27,7 @@ class Controller implements Initializable {
     @FXML
     private Button buttonWeiter;
 
+    private Presenter presenter;
 
 
     @Override
@@ -34,17 +36,16 @@ class Controller implements Initializable {
         // Eventhandler
         //---------------------------------------------    
         buttonWeiter.setOnAction(event -> {
-           Ampellogik.weiter();
+           //Model.weiter();
+            presenter.weiter();
         });
 
         //---------------------------------------------
         // Start
         //---------------------------------------------
-
-        rotAn();
-        gelbAus();
-        gruenAus();
+        presenter = new Presenter(this);
     }
+
 
     public void rotAn(){
         circleRot.setFill(Color.RED);
@@ -64,7 +65,6 @@ class Controller implements Initializable {
     public void gruenAus(){
         circleGruen.setFill(Color.GRAY);
     }
-
 
 
 

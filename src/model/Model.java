@@ -31,7 +31,6 @@ public class Model {
         presenter.setAmpelzustand(phase);
     }
 
-
 }
 
 

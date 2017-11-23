@@ -35,6 +35,7 @@ public class PassiveView implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //---------------------------------------------
         // Eventhandler
+
         //---------------------------------------------    
         buttonWeiter.setOnAction(event -> {
            //Model.weiter();
